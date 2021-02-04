@@ -121,11 +121,17 @@ export function get(slug, isLoading = true) {
 }
 
 // Create subscription
+// The create function called in the crate subcription button click
+// variables is the crate id
 export function create(variables) {
   return dispatch => {
+    // 'axios' is JS equivalent of 'faraday'
+    // Send POST request to API route w/ mutation subscriptionCreate
     return axios.post(routeApi, mutation({
       operation: 'subscriptionCreate',
+      // Variables are crateId
       variables,
+      // Return id value of new subscription in response
       fields: ['id']
     }))
   }

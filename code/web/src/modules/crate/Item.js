@@ -18,8 +18,9 @@ import { messageShow, messageHide } from '../common/api/actions'
 import { create } from '../subscription/api/actions'
 
 // Component
+// This is the class for the crate
 class Item extends PureComponent {
-
+  // This is the equivalent of initialize for a ruby class
   constructor(props) {
     super(props)
 
@@ -27,27 +28,30 @@ class Item extends PureComponent {
       isLoading: false
     }
   }
-
+  // When someone clicks 'Subscribe' under a crate, the state changes to loading
   onClickSubscribe = (crateId) => {
     this.setState({
       isLoading: true
     })
-
     this.props.messageShow('Subscribing, please wait...')
-
+    // Action to create a subscription for a specific crate
+    // create comes fro line 18, which imports it from subscriptions/api/actions
     this.props.create({ crateId })
       .then(response => {
+        // If there are errors, give an error message
         if (response.data.errors && response.data.errors.length > 0) {
           this.props.messageShow(response.data.errors[0].message)
         } else {
           this.props.messageShow('Subscribed successfully.')
-
+          // Reroute to the user/subscriptions page
           this.props.history.push(userRoutes.subscriptions.path)
         }
       })
+      // If there is a backend error:
       .catch(error => {
         this.props.messageShow('There was some error subscribing to this crate. Please try again.')
       })
+      // Reset the state
       .then(() => {
         this.setState({
           isLoading: false
