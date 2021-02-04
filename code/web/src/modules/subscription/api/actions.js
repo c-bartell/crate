@@ -127,6 +127,7 @@ export function create(variables) {
   return dispatch => {
     // 'axios' is JS equivalent of 'faraday'
     // Send POST request to API route w/ mutation subscriptionCreate
+    // how does the user token end up in the headers?
     return axios.post(routeApi, mutation({
       operation: 'subscriptionCreate',
       // Variables are crateId
