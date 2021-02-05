@@ -1,5 +1,6 @@
 'use strict'
-
+console.log(`Step: ${process.env.STEP}, File: ${__filename}`)
+process.env.STEP++
 // User
 module.exports = function(sequelize, DataTypes) {
   let User = sequelize.define('users', {

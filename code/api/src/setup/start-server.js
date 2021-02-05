@@ -1,3 +1,5 @@
+console.log(`Step: ${process.env.STEP}, File: ${__filename}`)
+process.env.STEP++
 // App Imports
 import { PORT, NODE_ENV } from '../config/env'
 

@@ -1,3 +1,5 @@
+console.log(`Step: ${process.env.STEP}, File: ${__filename}`)
+process.env.STEP++
 // App Imports
 import params from '../../config/params'
 import models from '../../setup/models'

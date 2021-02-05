@@ -1,3 +1,5 @@
+console.log(`Step: ${process.env.STEP}, File: ${__filename}`)
+process.env.STEP++
 // Imports
 import express from 'express'
 import path from 'path'
