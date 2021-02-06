@@ -4,8 +4,9 @@ import serverConfig from '../config/server.json'
 
 // Authentication middleware
 export default function (request, response, next) {
+  // sets authToken from request header
   let authToken = request.headers.authorization
-
+  
   if (authToken && authToken !== null) {
     try {
       const token = authToken.split(' ')
