@@ -11,6 +11,7 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         references: {
+          // references user model for foreign key
           model: 'users',
           key: 'id'
         },
@@ -19,6 +20,7 @@ module.exports = {
       crateId: {
         type: Sequelize.INTEGER,
         references: {
+          // references crate model for foreign key
           model: 'crates',
           key: 'id'
         },
