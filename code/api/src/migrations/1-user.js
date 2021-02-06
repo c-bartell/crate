@@ -1,4 +1,5 @@
 module.exports = {
+  // creates users object/table
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('users', {
       id: {
@@ -29,6 +30,7 @@ module.exports = {
       }
     });
   },
+  // sets command for dropping users table
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('users');
   }

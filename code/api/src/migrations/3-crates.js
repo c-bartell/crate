@@ -1,4 +1,5 @@
 module.exports = {
+  // sets command for creating crates object/table
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('crates', {
       id: {
@@ -23,6 +24,7 @@ module.exports = {
       }
     });
   },
+  // sets command for dropping table
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('crates');
   }

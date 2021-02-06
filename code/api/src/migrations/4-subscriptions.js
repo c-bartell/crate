@@ -1,4 +1,5 @@
 module.exports = {
+  // sets command for creating subscriptions object/table
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('subscriptions', {
       id: {
@@ -33,6 +34,7 @@ module.exports = {
       }
     });
   },
+  // sets command for dropping table
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('subscriptions');
   }

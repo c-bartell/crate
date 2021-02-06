@@ -1,4 +1,5 @@
 module.exports = {
+  // creates products object/table
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('products', {
       id: {
@@ -35,6 +36,7 @@ module.exports = {
       }
     });
   },
+  //sets command for dropping table
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('products');
   }
