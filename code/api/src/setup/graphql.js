@@ -19,6 +19,7 @@ export default function (server) {
     pretty: serverConfig.graphql.pretty,
     context: {
       auth: {
+        // parses user info and authentication status from request
         user: request.user,
         isAuthenticated: request.user && request.user.id > 0
       }
