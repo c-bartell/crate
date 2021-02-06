@@ -1,4 +1,5 @@
 // App Imports
+// calls PORT and NODE_ENV variables which define port number and environment in .env
 import { PORT, NODE_ENV } from '../config/env'
 
 // Start server
