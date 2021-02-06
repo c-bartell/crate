@@ -2,6 +2,7 @@
 import { GraphQLObjectType } from 'graphql'
 
 // App Imports
+// makes all tables available to mutations requests such as post
 import * as user from '../../modules/user/mutations'
 import * as product from '../../modules/product/mutations'
 import * as crate from '../../modules/crate/mutations'
