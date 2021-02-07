@@ -7,6 +7,8 @@ import { create, remove } from './resolvers'
 
 // Subscription create
 export const subscriptionCreate = {
+  // This defines the structure of the subscriptionCreate mutation, and
+  // specifies the resolver to be used
   type: SubscriptionType,
   args: {
     crateId: {

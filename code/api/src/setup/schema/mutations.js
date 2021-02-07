@@ -20,5 +20,4 @@ const mutation = new GraphQLObjectType({
     ...subscription
   }
 })
-
 export default mutation

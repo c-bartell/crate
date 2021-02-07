@@ -1,4 +1,6 @@
 // Imports
+// Sequelize is the db orm (like activerecord, but JS)
+// This gives us a wrapper to abstract away any SQL queries of the database
 import { Sequelize } from 'sequelize'
 
 // App Imports
