@@ -1,0 +1,1 @@
+// to alter: this migration will build an images table. An image table will have an id (Int), path to the image (String/Text), and a style tag that describes the style of clothing in the image (String/Text). This will all be created in the up migration, then in the down migration, there will be a drop images table rollback
