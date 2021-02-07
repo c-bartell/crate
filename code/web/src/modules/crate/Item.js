@@ -18,6 +18,10 @@ import { messageShow, messageHide } from '../common/api/actions'
 import { create } from '../subscription/api/actions'
 
 // Component
+
+// BRYCE NOTES
+// This Comp will handle rendering each crate block and displaying it.
+// history needs to be pushed to style survey and not subscriptions
 class Item extends PureComponent {
 
   constructor(props) {
@@ -28,6 +32,10 @@ class Item extends PureComponent {
     }
   }
 
+
+// BRYCE NOTES
+// I believe this should all still happen but we don't want to be redirected to /subscriptions
+// we want to be redirected to user/style-preferences
   onClickSubscribe = (crateId) => {
     this.setState({
       isLoading: true
@@ -41,7 +49,8 @@ class Item extends PureComponent {
           this.props.messageShow(response.data.errors[0].message)
         } else {
           this.props.messageShow('Subscribed successfully.')
-
+// so here instead of pushing the history to that we need to push it to style preferences 
+// look at notes in '../../setup/routes/user'
           this.props.history.push(userRoutes.subscriptions.path)
         }
       })

@@ -16,6 +16,11 @@ import EmptyMessage from '../common/EmptyMessage'
 import CrateItem from './Item'
 
 // Component
+
+// BRYCE NOTES:
+// this component has a couple different props. 
+// crates => a fetch call that returns array of 6
+// getCratesList => function, fetch call (line 33)
 class List extends PureComponent {
 
   // Runs on server only for SSR
@@ -29,6 +34,7 @@ class List extends PureComponent {
   }
 
   render() {
+
     return (
       <div>
         {/* SEO */}
@@ -45,6 +51,9 @@ class List extends PureComponent {
               subscribe to multiple crates.</p>
           </GridCell>
         </Grid>
+
+{/* BRYCE NOTES */}
+{/* this.props.crates.list is each crate we're rendering.  */}
 
         {/* Crate list */}
         <Grid>
