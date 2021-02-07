@@ -1,6 +1,6 @@
 // App Imports
 import models from '../../setup/models'
-
+// defines actions for acceptable subscription requests
 // Get subscription by ID
 export async function get(parentValue, { id }) {
   return await models.Subscription.findOne({

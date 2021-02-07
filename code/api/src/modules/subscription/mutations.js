@@ -1,6 +1,6 @@
 // Imports
 import { GraphQLInt } from 'graphql'
-
+// defines accepted post and delete requests
 // App Imports
 import SubscriptionType from './types'
 import { create, remove } from './resolvers'

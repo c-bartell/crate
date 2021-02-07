@@ -2,6 +2,7 @@
 
 // Subscription
 module.exports = function(sequelize, DataTypes) {
+  // defines subscription class
   let Subscription = sequelize.define('subscriptions', {
     userId: {
       type: DataTypes.INTEGER

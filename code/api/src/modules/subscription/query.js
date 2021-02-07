@@ -1,6 +1,6 @@
 // Imports
 import { GraphQLInt, GraphQLList } from 'graphql'
-
+// defines accepted structures for subscription get requests
 // App Imports
 import SubscriptionType from './types'
 import { getAll, getByUser, get } from './resolvers'
