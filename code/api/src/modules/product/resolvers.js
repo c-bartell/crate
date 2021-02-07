@@ -1,7 +1,7 @@
 // App Imports
 import params from '../../config/params'
 import models from '../../setup/models'
-
+// defines actions for product requests
 // Get all products
 export async function getAll() {
   return await models.Product.findAll({ order: [['id', 'DESC']] })

@@ -4,7 +4,7 @@ import { GraphQLString, GraphQLInt, GraphQLList } from 'graphql'
 // App Imports
 import { ProductType, ProductTypesType } from './types'
 import { getAll, getBySlug, getById, getRelated, getTypes } from './resolvers'
-
+// defines accepted structures for product get requests
 // Products All
 export const products = {
   type: new GraphQLList(ProductType),

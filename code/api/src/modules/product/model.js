@@ -3,6 +3,7 @@
 // Product
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('products', {
+    // defines datatypes for product attributes/columns
     name: {
       type: DataTypes.STRING
     },

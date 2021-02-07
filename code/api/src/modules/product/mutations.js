@@ -6,6 +6,7 @@ import { ProductType } from './types'
 import { create, update, remove } from './resolvers'
 
 // Product create
+// defines accepted structure for product create request
 export const productCreate = {
   type: ProductType,
   args: {
@@ -43,6 +44,7 @@ export const productCreate = {
 }
 
 // Product update
+// defines accepted structure for product update request
 export const productUpdate = {
   type: ProductType,
   args: {
@@ -85,6 +87,7 @@ export const productUpdate = {
 }
 
 // Product remove
+// defines accepted structure for product delete request
 export const productRemove = {
   type: ProductType,
   args: {
