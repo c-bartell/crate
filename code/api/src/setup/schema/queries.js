@@ -8,6 +8,7 @@ import * as crate from '../../modules/crate/query'
 import * as subscription from '../../modules/subscription/query'
 
 // Query
+// Defines the fields that have queries in the schema
 const query = new GraphQLObjectType({
   name: 'query',
   description: 'API Queries [Read]',

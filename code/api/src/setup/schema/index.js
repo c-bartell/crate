@@ -6,6 +6,7 @@ import query from './queries'
 import mutation from './mutations'
 
 // Schema
+// Creates the graphql schema object
 const schema = new GraphQLSchema({
   query,
   mutation

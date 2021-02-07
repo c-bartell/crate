@@ -8,6 +8,7 @@ import * as crate from '../../modules/crate/mutations'
 import * as subscription from '../../modules/subscription/mutations'
 
 // Mutation
+// Defines the fields that have mutations in the schema
 const mutation = new GraphQLObjectType({
   name: 'mutations',
   description: 'API Mutations [Create, Update, Delete]',
