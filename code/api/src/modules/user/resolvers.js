@@ -1,4 +1,5 @@
 // Imports
+// calls bcrypt to encrypt passwords
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
@@ -37,6 +38,7 @@ export async function login(parentValue, { email, password }) {
     const userDetails = user.get()
 
     // User exists
+    // checks password against database
     const passwordMatch = await bcrypt.compare(password, userDetails.password)
 
     if (!passwordMatch) {
