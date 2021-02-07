@@ -1,5 +1,5 @@
 'use strict';
-
+// provides crates seeds
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('crates', [

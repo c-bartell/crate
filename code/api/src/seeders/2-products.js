@@ -1,7 +1,7 @@
 'use strict';
 
 const params = require('../config/params');
-
+// provides products seeds
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('products', [
