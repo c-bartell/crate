@@ -1,5 +1,3 @@
-console.log(`Step: ${process.env.STEP}, File: ${__filename}`)
-process.env.STEP++
 // Imports
 import jwt from 'jsonwebtoken'
 import serverConfig from '../config/server.json'

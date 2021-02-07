@@ -54,5 +54,3 @@ export async function remove(parentValue, { id }, { auth }) {
     throw new Error('Operation denied.')
   }
 }
-console.log(`Step: ${process.env.STEP}, File: ${__filename}`)
-process.env.STEP++

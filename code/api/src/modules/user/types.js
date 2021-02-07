@@ -1,6 +1,4 @@
 // Imports
-console.log(`Step: ${process.env.STEP}, File: ${__filename}`)
-process.env.STEP++
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 
 // User type
