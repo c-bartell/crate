@@ -6,12 +6,14 @@ import { UserType, UserLoginType, UserGenderType } from './types'
 import { getAll, getById, login, getGenders } from './resolvers'
 
 // All
+// defines accepted structure for all users get request
 export const users = {
   type: new GraphQLList(UserType),
   resolve: getAll
 }
 
 // By ID
+// defines accepted structure for single user get request
 export const user = {
   type: UserType,
   args: {
@@ -21,6 +23,7 @@ export const user = {
 }
 
 // Auth
+// defines accepted structure for login request
 export const userLogin = {
   type: UserLoginType,
   args: {
