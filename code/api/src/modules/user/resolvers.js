@@ -1,5 +1,7 @@
 // Imports
+// this allows for password encryption
 import bcrypt from 'bcrypt'
+// this generates a web token for a user
 import jwt from 'jsonwebtoken'
 
 // App Imports
@@ -8,6 +10,7 @@ import params from '../../config/params'
 import models from '../../setup/models'
 
 // Create
+// this creates a user with name, email and password passed in as args from user creation page
 export async function create(parentValue, { name, email, password }) {
   // Users exists with same email check
   const user = await models.User.findOne({ where: { email } })
@@ -26,8 +29,9 @@ export async function create(parentValue, { name, email, password }) {
     throw new Error(`The email ${ email } is already registered. Please try to login.`)
   }
 }
-
+// this allows a user to log in as long as their credentials are valid
 export async function login(parentValue, { email, password }) {
+  // this waits to proceed to check if user exists or not
   const user = await models.User.findOne({ where: { email } })
 
   if (!user) {
@@ -77,3 +81,5 @@ export async function remove(parentValue, { id }) {
 export async function getGenders() {
   return Object.values(params.user.gender)
 }
+
+// to alter: need to add resolver for adding a user's style to their record in the database
