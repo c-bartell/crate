@@ -43,3 +43,5 @@ export const userRemove = {
   },
   resolve: remove
 }
+
+// to alter: will need to add a way to update a user's style. Since this will not be done upon user creation, it will have to be separate
