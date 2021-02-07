@@ -13,7 +13,7 @@
     "start:prod": "npm run build:prod && npm run start:server",
     "build:prod": "babel src -s -D -d build",
     "start:server": "node build/index.js",
-    "start:debug": "nodemon --inspect src/index.js --exec babel-node"
+    "pry:cry": "nodemon --inspect src/index.js --exec babel-node"
   },
   "keywords": [],
   "author": "",
