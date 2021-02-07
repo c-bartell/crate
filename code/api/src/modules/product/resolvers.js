@@ -4,13 +4,14 @@ import models from '../../setup/models'
 
 // Get all products
 export async function getAll() {
+  debugger;
   return await models.Product.findAll({ order: [['id', 'DESC']] })
 }
 
 // Get product by slug
 export async function getBySlug(parentValue, { slug }) {
   const product = await models.Product.findOne({ where: { slug } })
-
+  debugger;
   if (!product) {
     // Product does not exists
     throw new Error('The product you are looking for does not exists or has been discontinued.')
@@ -22,7 +23,7 @@ export async function getBySlug(parentValue, { slug }) {
 // Get product by ID
 export async function getById(parentValue, { productId }) {
   const product = await models.Product.findOne({ where: { id: productId } })
-
+  debugger;
   if (!product) {
     // Product does not exists
     throw new Error('The product you are looking for does not exists or has been discontinued.')
@@ -33,6 +34,7 @@ export async function getById(parentValue, { productId }) {
 
 // Get related products
 export async function getRelated(parentValue, { productId }) {
+  debugger;
   return await models.Product.findAll({
     where: {
       id: { [models.Sequelize.Op.not]: productId }
@@ -44,6 +46,7 @@ export async function getRelated(parentValue, { productId }) {
 
 // Create product
 export async function create(parentValue, { name, slug, description, type, gender, image }, { auth }) {
+  debugger;
   if(auth.user && auth.user.role === params.user.roles.admin) {
     return await models.Product.create({
       name,
@@ -60,6 +63,7 @@ export async function create(parentValue, { name, slug, description, type, gende
 
 // Update product
 export async function update(parentValue, { id, name, slug, description, type, gender, image }, { auth }) {
+  debugger;
   if(auth.user && auth.user.role === params.user.roles.admin) {
     return await models.Product.update(
       {
@@ -79,6 +83,7 @@ export async function update(parentValue, { id, name, slug, description, type, g
 
 // Delete product
 export async function remove(parentValue, { id }, { auth }) {
+  debugger;
   if(auth.user && auth.user.role === params.user.roles.admin) {
     const product = await models.Product.findOne({where: {id}})
 
@@ -95,5 +100,6 @@ export async function remove(parentValue, { id }, { auth }) {
 
 // Product types
 export async function getTypes() {
+  debugger;
   return Object.values(params.product.types)
 }

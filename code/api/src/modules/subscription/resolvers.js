@@ -3,6 +3,7 @@ import models from '../../setup/models'
 
 // Get subscription by ID
 export async function get(parentValue, { id }) {
+  debugger;
   return await models.Subscription.findOne({
     where: { id },
     include: [
@@ -14,6 +15,7 @@ export async function get(parentValue, { id }) {
 
 // Get subscription by user
 export async function getByUser(parentValue, {}, { auth }) {
+  debugger;
   if(auth.user && auth.user.id > 0) {
     return await models.Subscription.findAll({
       where: {
@@ -31,6 +33,7 @@ export async function getByUser(parentValue, {}, { auth }) {
 
 // Get all subscriptions
 export async function getAll() {
+  debugger;
   return await models.Subscription.findAll({
     include: [
       { model: models.User, as: 'user' },
@@ -41,6 +44,7 @@ export async function getAll() {
 
 // Create subscription
 export async function create(parentValue, { crateId }, { auth }) {
+  debugger;
   if(auth.user && auth.user.id > 0) {
     return await models.Subscription.create({
       crateId,
@@ -53,6 +57,7 @@ export async function create(parentValue, { crateId }, { auth }) {
 
 // Delete subscription
 export async function remove(parentValue, { id }, { auth }) {
+  debugger;
   if(auth.user && auth.user.id > 0) {
     return await models.Subscription.destroy({where: {id, userId: auth.user.id}})
   } else {

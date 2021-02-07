@@ -11,7 +11,7 @@ import models from '../../setup/models'
 export async function create(parentValue, { name, email, password }) {
   // Users exists with same email check
   const user = await models.User.findOne({ where: { email } })
-
+  debugger;
   if (!user) {
     // User does not exists
     const passwordHashed = await bcrypt.hash(password, serverConfig.saltRounds)
@@ -29,7 +29,7 @@ export async function create(parentValue, { name, email, password }) {
 
 export async function login(parentValue, { email, password }) {
   const user = await models.User.findOne({ where: { email } })
-
+  debugger;
   if (!user) {
     // User does not exists
     throw new Error(`We do not have any user registered with ${ email } email address. Please signup.`)
@@ -60,20 +60,24 @@ export async function login(parentValue, { email, password }) {
 
 // Get by ID
 export async function getById(parentValue, { id }) {
+  debugger;
   return await models.User.findOne({ where: { id } })
 }
 
 // Get all
 export async function getAll() {
+  debugger;
   return await models.User.findAll()
 }
 
 // Delete
 export async function remove(parentValue, { id }) {
+  debugger;
   return await models.User.destroy({ where: { id } })
 }
 
 // User genders
 export async function getGenders() {
+  debugger;
   return Object.values(params.user.gender)
 }
