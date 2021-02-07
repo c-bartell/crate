@@ -1,0 +1,1 @@
+// this is where we will write up and down functions to be exported. They will create seeds for images that will be used for the style survey with style tags
