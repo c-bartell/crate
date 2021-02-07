@@ -10,6 +10,7 @@ export default function (server) {
   console.info('SETUP - Upload...')
 
   // Set destination
+  // This defines where uploaded files should be stored to the server
   const storage = multer.diskStorage({
     destination: path.join(__dirname, '..', '..', 'public', 'images', 'uploads'),
 
@@ -23,6 +24,7 @@ export default function (server) {
   }).single('file')
 
   // Upload route
+  // This defines the file upload request endpoint.
   server.post(serverConfig.upload.endpoint, (request, response) => {
     upload(request, response, function (error) {
       if (!error) {
