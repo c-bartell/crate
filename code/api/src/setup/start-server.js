@@ -2,6 +2,7 @@
 import { PORT, NODE_ENV } from '../config/env'
 
 // Start server
+// This starts the app server in the given environment on the specified port
 export default function (server) {
   console.info('SETUP - Starting server..')
 
