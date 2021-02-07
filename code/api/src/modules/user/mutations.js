@@ -6,6 +6,7 @@ import { UserType } from './types'
 import { create, remove } from './resolvers'
 
 // Create
+// defines accepted structure for user post request
 export const userSignup = {
   type: UserType,
   args: {
@@ -24,10 +25,12 @@ export const userSignup = {
       type: GraphQLString
     }
   },
+  // calls create from user resolvers
   resolve: create
 }
 
 // Remove
+// defines accepted structure for user delete request
 export const userRemove = {
   type: UserType,
   args: {
@@ -36,5 +39,6 @@ export const userRemove = {
       type: GraphQLInt
     }
   },
+  // calls remove from user resolvers
   resolve: remove
 }
