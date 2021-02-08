@@ -81,3 +81,5 @@ export async function getGenders() {
   debugger;
   return Object.values(params.user.gender)
 }
+
+// Add resolver to update user style

@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     role: {
       type: DataTypes.TEXT
     }
+    // We will add a column to the users table for Style (default null, then string)
   })
 
   User.associate = function(models) {

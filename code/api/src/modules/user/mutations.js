@@ -38,3 +38,5 @@ export const userRemove = {
   },
   resolve: remove
 }
+
+// We will need to add an updateStyle
