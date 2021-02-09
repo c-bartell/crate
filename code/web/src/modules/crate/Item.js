@@ -42,7 +42,7 @@ class Item extends PureComponent {
         } else {
           // this.props.messageShow('Subscribed successfully.')
 
-          this.props.history.push(userRoutes.survey.path)
+          this.props.history.push(userRoutes.stylePreferences.path)
         }
       })
       .catch(error => {
