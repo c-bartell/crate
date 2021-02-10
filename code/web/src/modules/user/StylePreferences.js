@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 // import { connect } from 'react-redux'
 import { H3 } from "../../ui/typography";
-// import { Grid, GridCell } from '../../ui/grid'
-// import { grey, grey2 } from '../../ui/common/colors'
-// import { getListByUser } from '../subscription/api/actions'
+import { Grid, GridCell } from '../../ui/grid'
+import { white, grey, grey2 } from '../../ui/common/colors'
 import { Link, withRouter } from "react-router-dom";
+import Card from '../../ui/card/Card'
+import Button from '../../ui/button/Button'
+import Icon from '../../ui/icon'
+
 
 class StylePreferences extends Component {
   constructor(props) {
@@ -24,6 +27,17 @@ class StylePreferences extends Component {
             <p style={{ marginTop: '1em', color: grey2 }}>Fill out the survey</p>
           </GridCell>
         </Grid>
+        <Grid>
+          <GridCell>
+            <Card style={{ width: '18em', height: '18em', backgroundColor: white }}>
+              <img src="" alt="Casual Image"/>
+            </Card>
+
+          </GridCell>
+        </Grid>
+        <Button type="button" theme="primary">
+          <Icon size={1.2} style={{ color: white }}>add</Icon> Submit Survey
+        </Button>
       </section>
     );
   }
