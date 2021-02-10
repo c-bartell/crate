@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import { H3 } from "../../ui/typography";
 import { Grid, GridCell } from '../../ui/grid'
 import { white, grey, grey2 } from '../../ui/common/colors'
-import { Link, withRouter } from "react-router-dom";
-import Card from '../../ui/card/Card'
+
 import Button from '../../ui/button/Button'
 import Icon from '../../ui/icon'
+import SurveyCards from "./SurveyCards";
 
 
 class StylePreferences extends Component {
@@ -29,10 +29,22 @@ class StylePreferences extends Component {
         </Grid>
         <Grid>
           <GridCell>
-            <Card style={{ width: '18em', height: '18em', backgroundColor: white }}>
-              <img src="" alt="Casual Image"/>
-            </Card>
-
+            <H3 font="secondary">Which top best represents your style?</H3>
+            <div style={{ margin: '2em', display: "flex", flexDirection: "row" }}>
+              <SurveyCards props={["White", "Blue", "Yellow"]} />
+            </div>
+            <H3 font="secondary">Which bottom best represents your style?</H3>
+            <div style={{ margin: '2em', display: "flex", flexDirection: "row" }}>
+              <SurveyCards props={["Green", "Pink", "Orange"]} />
+            </div>
+            <H3 font="secondary">Which accecories best represent your style?</H3>
+            <div style={{ margin: '2em', display: "flex", flexDirection: "row" }}>
+              <SurveyCards props={["Hello", "Hi", "Hey"]} />
+            </div>
+            <H3 font="secondary">Which 'something' best represent your style?</H3>
+            <div style={{ margin: '2em', display: "flex", flexDirection: "row" }}>
+              <SurveyCards props={["Yes", "Yeah", "Perfect"]} />
+            </div>
           </GridCell>
         </Grid>
         <Button type="button" theme="primary">
