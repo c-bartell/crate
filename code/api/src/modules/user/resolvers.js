@@ -77,3 +77,23 @@ export async function remove(parentValue, { id }) {
 export async function getGenders() {
   return Object.values(params.user.gender)
 }
+
+// Add user style
+export async function addStyle(parentValue, { id, surveyResults } ) {
+  var array = surveyResults.split(", ")
+  var counts = array.reduce((a, c) => {
+    a[c] = (a[c] || 0) + 1;
+    return a;
+  }, {});
+  var maxCount = Math.max(...Object.values(counts));
+  var mostFrequent = Object.keys(counts).filter(k => counts[k] === maxCount);
+  var string = mostFrequent.join(" but ")
+  await models.User.update(
+    {
+      style: string
+    },
+  { where: { id }}
+  )
+  const user = await models.User.findOne({ where: { id } })
+  return user
+}
