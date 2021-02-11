@@ -80,7 +80,7 @@ export async function getGenders() {
 
 // Add user style
 export async function addStyle(parentValue, { id, survey_results } ) {
-  var array = survey_results.split(", ")
+  var array = surveyResults.split(", ")
   var counts = array.reduce((a, c) => {
     a[c] = (a[c] || 0) + 1;
     return a;

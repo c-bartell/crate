@@ -47,7 +47,7 @@ export const userAddStyle = {
       name: 'id',
       type: GraphQLInt
     },
-    survey_results: {
+    surveyResults: {
       name: 'survey_results',
       type: GraphQLString
     }
