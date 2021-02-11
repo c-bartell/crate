@@ -15,7 +15,7 @@ class StylePreferences extends Component {
       tops: "",
       bottoms: "",
       accessories: "",
-      something: "",
+      shoes: "",
     };
   }
 
@@ -32,7 +32,7 @@ class StylePreferences extends Component {
       " " +
       this.state.accessories +
       " " +
-      this.state.something;
+      this.state.shoes;
     //send this string to the backend! 
 
     // bring up the modal with the style summary! 
@@ -45,7 +45,7 @@ class StylePreferences extends Component {
           <GridCell style={{ padding: "2em", textAlign: "center" }}>
             <H3 font="secondary">Style Survey</H3>
             <p style={{ marginTop: "1em", color: grey2 }}>
-              Fill out the survey
+              To fill out the survey please select one item from each category that most appeals to you.
             </p>
           </GridCell>
         </Grid>
@@ -80,7 +80,7 @@ class StylePreferences extends Component {
               onSelect={this.onSelect}
             />
           </div>
-          <H3 font="secondary">Which accecories best represent your style?</H3>
+          <H3 font="secondary">Which accessories best represent your style?</H3>
           <div style={{ margin: "2em", display: "flex", flexDirection: "row" }}>
             <SurveyCards
               images={[
@@ -92,7 +92,7 @@ class StylePreferences extends Component {
               onSelect={this.onSelect}
             />
           </div>
-          <H3 font="secondary">Which 'something' best represent your style?</H3>
+          <H3 font="secondary">Which shoes best represent your style?</H3>
           <div style={{ margin: "2em", display: "flex", flexDirection: "row" }}>
             <SurveyCards
               images={[
@@ -100,7 +100,7 @@ class StylePreferences extends Component {
                 { id: "classy", src: "red" },
                 { id: "sketchy", src: "red" },
               ]}
-              category={"something"}
+              category={"shoes"}
               onSelect={this.onSelect}
             />
           </div>
