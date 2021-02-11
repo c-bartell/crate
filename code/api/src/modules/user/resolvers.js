@@ -79,7 +79,7 @@ export async function getGenders() {
 }
 
 // Add user style
-export async function addStyle(parentValue, { id, survey_results } ) {
+export async function addStyle(parentValue, { id, surveyResults } ) {
   var array = surveyResults.split(", ")
   var counts = array.reduce((a, c) => {
     a[c] = (a[c] || 0) + 1;

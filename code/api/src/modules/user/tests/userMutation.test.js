@@ -18,7 +18,7 @@ describe('user queries', () => {
   it('can successfully mutate a users style', async (done) => {
     const response = await request(server)
       .post('/')
-      .send({ query: 'mutation {userAddStyle(id: 2, survey_results: "Edgy, Edgy, Classy, Casual") { id email style } } '})
+      .send({ query: 'mutation {userAddStyle(id: 2, surveyResults: "Edgy, Edgy, Classy, Casual") { id email style } } '})
       .expect(200)
       expect(response.body).toMatchObject({
         data: {
@@ -36,7 +36,7 @@ describe('user queries', () => {
   async (done) => {
     const response = await request(server)
       .post('/')
-      .send({ query: 'mutation {userAddStyle(id: 2, survey_results: "Edgy, Edgy, Classy, Classy") { id email style } } '})
+      .send({ query: 'mutation {userAddStyle(id: 2, surveyResults: "Edgy, Edgy, Classy, Classy") { id email style } } '})
       .expect(200)
       expect(response.body).toMatchObject({
         data: {
