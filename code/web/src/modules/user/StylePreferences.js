@@ -34,6 +34,8 @@ class StylePreferences extends Component {
       " " +
       this.state.something;
     //send this string to the backend! 
+
+    // bring up the modal with the style summary! 
   }
 
   render() {
