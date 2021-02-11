@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { H3 } from "../../ui/typography";
 import { Grid, GridCell } from "../../ui/grid";
 import { white, grey, grey2 } from "../../ui/common/colors";
-
 import Button from "../../ui/button/Button";
 import Icon from "../../ui/icon";
 import SurveyCards from "./SurveyCards";
