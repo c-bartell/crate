@@ -69,7 +69,7 @@ class StylePreferences extends Component {
               onSelect={this.onSelect}
             />
           </div>
-          <H3 font="secondary">Are more a spicy, sweet or sour person?</H3>
+          <H3 font="secondary">Are you more of a spicy, sweet or sour person?</H3>
           <div style={{ margin: "2em", display: "flex", flexDirection: "row" }}>
             <SurveyCards
               images={[
