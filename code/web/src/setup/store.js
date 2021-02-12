@@ -11,8 +11,6 @@ import * as product from '../modules/product/api/state'
 import * as subscription from '../modules/subscription/api/state'
 import * as crate from '../modules/crate/api/state'
 
-import { composeWithDevTools } from 'redux-devtools-extension';
-
 // App Reducer
 const appReducer = combineReducers({
   common,
