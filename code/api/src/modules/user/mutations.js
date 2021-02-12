@@ -43,10 +43,6 @@ export const userRemove = {
 export const userAddStyle = {
   type: UserType,
   args: {
-    id: {
-      name: 'id',
-      type: GraphQLInt
-    },
     surveyResults: {
       name: 'surveyResults',
       type: GraphQLString
