@@ -61,9 +61,9 @@ class StylePreferences extends Component {
           <div style={{ margin: "2em", display: "flex", flexDirection: "row" }}>
             <SurveyCards
               images={[
-                { id: "casual", src: "red" },
-                { id: "classy", src: "red" },
-                { id: "edgy", src: "red" },
+                { id: "casual", src: "/images/stock/survey/mountains-A.jpg" },
+                { id: "classy", src: "/images/stock/survey/beach-A.jpg" },
+                { id: "edgy", src: "/images/stock/survey/city-A.jpg" },
               ]}
               category={"vacation"}
               onSelect={this.onSelect}
@@ -73,9 +73,9 @@ class StylePreferences extends Component {
           <div style={{ margin: "2em", display: "flex", flexDirection: "row" }}>
             <SurveyCards
               images={[
-                { id: "casual", src: "red" },
-                { id: "classy", src: "red" },
-                { id: "edgy", src: "red" },
+                { id: "casual", src: "/images/stock/survey/popcorn-B.jpg" },
+                { id: "classy", src: "/images/stock/survey/spicy-B.jpg" },
+                { id: "edgy", src: "/images/stock/survey/sweet-B.jpg" },
               ]}
               category={"flavors"}
               onSelect={this.onSelect}
@@ -85,9 +85,9 @@ class StylePreferences extends Component {
           <div style={{ margin: "2em", display: "flex", flexDirection: "row" }}>
             <SurveyCards
               images={[
-                { id: "casual", src: "red" },
-                { id: "classy", src: "red" },
-                { id: "edgy", src: "red" },
+                { id: "casual", src: "/images/stock/survey/burger-C.jpg" },
+                { id: "classy", src: "/images/stock/survey/pancakes-C.jpg" },
+                { id: "edgy", src: "/images/stock/survey/fine-C.jpg" },
               ]}
               category={"restaurants"}
               onSelect={this.onSelect}
@@ -97,9 +97,9 @@ class StylePreferences extends Component {
           <div style={{ margin: "2em", display: "flex", flexDirection: "row" }}>
             <SurveyCards
               images={[
-                { id: "casual", src: "red" },
-                { id: "classy", src: "red" },
-                { id: "edgy", src: "red" },
+                { id: "casual", src: "/images/stock/survey/house-D.jpg" },
+                { id: "classy", src: "/images/stock/survey/cabin-D.jpg" },
+                { id: "edgy", src: "/images/stock/survey/apartment-D.jpg" },
               ]}
               category={"architecture"}
               onSelect={this.onSelect}
