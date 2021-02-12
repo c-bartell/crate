@@ -1,24 +1,18 @@
 import request from 'supertest';
 import express from 'express';
-import graphqlHTTP from 'express-graphql';
-import schema from '../../../setup/schema';
+import setupGraphQL from '../../../setup/graphql'
 
 describe('user queries', () => {
   let server = express();
   beforeAll(() => {
-    server.use(
-      '/',
-      graphqlHTTP({
-        schema: schema,
-        graphiql: false
-      })
-    )
+    setupGraphQL(server)
   })
 
   it('can successfully mutate a users style', async (done) => {
     const response = await request(server)
       .post('/')
-      .send({ query: 'mutation {userAddStyle(id: 2, surveyResults: "Edgy, Edgy, Classy, Casual") { id email style } } '})
+      .set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IlRoZSBVc2VyIiwiZW1haWwiOiJ1c2VyQGNyYXRlLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjEzMDgzMTcyfQ.cqVaMXWS8lP8JB8S982rsMcbey55MzWZMA6M0xUTFSM")
+      .send({ query: 'mutation {userAddStyle(surveyResults: "Edgy, Edgy, Classy, Casual") { id email style } } '})
       .expect(200)
       expect(response.body).toMatchObject({
         data: {
@@ -36,7 +30,8 @@ describe('user queries', () => {
   async (done) => {
     const response = await request(server)
       .post('/')
-      .send({ query: 'mutation {userAddStyle(id: 2, surveyResults: "Edgy, Edgy, Classy, Classy") { id email style } } '})
+      .set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IlRoZSBVc2VyIiwiZW1haWwiOiJ1c2VyQGNyYXRlLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjEzMDgzMTcyfQ.cqVaMXWS8lP8JB8S982rsMcbey55MzWZMA6M0xUTFSM")
+      .send({ query: 'mutation {userAddStyle(surveyResults: "Edgy, Edgy, Classy, Classy") { id email style } } '})
       .expect(200)
       expect(response.body).toMatchObject({
         data: {

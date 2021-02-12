@@ -79,7 +79,7 @@ export async function getGenders() {
 }
 
 // Add user style
-export async function addStyle(parentValue, { id, surveyResults } ) {
+export async function addStyle(parentValue, { surveyResults }, { auth } ) {
   var array = surveyResults.split(", ")
   var counts = array.reduce((a, c) => {
     a[c] = (a[c] || 0) + 1;
@@ -92,8 +92,8 @@ export async function addStyle(parentValue, { id, surveyResults } ) {
     {
       style: string
     },
-  { where: { id }}
+  { where: { id: auth.user.id }}
   )
-  const user = await models.User.findOne({ where: { id } })
+  const user = await models.User.findOne({ where: { id: auth.user.id } })
   return user
 }
