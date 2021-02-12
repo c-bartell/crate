@@ -117,3 +117,17 @@ export function getGenders() {
     }))
   }
 }
+
+// Get Style
+export function updateStyle(userStyle) {
+  return dispatch => {
+    return axios.post(
+      routeApi,
+      mutation({
+        operation: "userAddStyle",
+        variables: userStyle,
+        fields: ["stlye"],
+      })
+    );
+  };
+}
