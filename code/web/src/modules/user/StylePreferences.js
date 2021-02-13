@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+import SurveyCards from "./SurveyCards";
+
+// UI imports
 import { H3 } from "../../ui/typography";
 import { Grid, GridCell } from "../../ui/grid";
 import { white, grey, grey2 } from "../../ui/common/colors";
 import Button from "../../ui/button/Button";
 import Icon from "../../ui/icon";
-import SurveyCards from "./SurveyCards";
+
+import { addStyle } from "./api/actions";
 
 class StylePreferences extends Component {
   constructor(props) {
@@ -15,27 +19,27 @@ class StylePreferences extends Component {
       flavors: "",
       restaurants: "",
       architecture: "",
+      styleSummary: "",
     };
   }
-
 
   onSelect = (value, kind) => {
     this.setState({ [kind]: value });
   };
 
   onSubmit() {
-  
     const selectionString =
       this.state.vacation +
-      " " +
+      ", " +
       this.state.flavors +
-      " " +
+      ", " +
       this.state.restaurants +
-      " " +
+      ", " +
       this.state.architecture;
-    //send this string to the backend! 
 
-    // bring up the modal with the style summary! 
+    addStyle(selectionString)
+      .then((response) => this.setState({ styleSummary: response.data }))
+      .catch((error) => console.log(error));
   }
 
   render() {
@@ -45,8 +49,9 @@ class StylePreferences extends Component {
           <GridCell style={{ padding: "2em", textAlign: "center" }}>
             <H3 font="secondary">Style Survey</H3>
             <p style={{ marginTop: "1em", color: grey2 }}>
-              Thank you for subscribing! Here is a short survey so we can tailor your crate to you!
-              To fill out the survey please select one image from each category and click submit.
+              Thank you for subscribing! Here is a short survey so we can tailor
+              your crate to you! To fill out the survey please select one image
+              from each category and click submit.
             </p>
           </GridCell>
         </Grid>
@@ -69,7 +74,9 @@ class StylePreferences extends Component {
               onSelect={this.onSelect}
             />
           </div>
-          <H3 font="secondary">Are you more of a spicy, sweet or sour person?</H3>
+          <H3 font="secondary">
+            Are you more of a spicy, sweet or sour person?
+          </H3>
           <div style={{ margin: "2em", display: "flex", flexDirection: "row" }}>
             <SurveyCards
               images={[
@@ -118,6 +125,4 @@ class StylePreferences extends Component {
   }
 }
 
-
-export default StylePreferences
-
+export default StylePreferences;
