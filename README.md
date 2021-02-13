@@ -195,5 +195,5 @@ The MIT License (http://www.opensource.org/licenses/mit-license.php)
 ## Backend Additions
 The backend team was charged with adding a column, style, to the User's table that accepted a string signifying that user's preferred style which was obtained by the user's answers to a survey. To accomplish this, first a migration was added and the attribute was included in the user module directory in the model file.
 
-<img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%201.43.35%20PM.png" width="450" height="350">
+<img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%201.43.35%20PM.png" width="500" height="250">
 
