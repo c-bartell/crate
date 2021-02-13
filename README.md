@@ -191,3 +191,8 @@ Looking for a developer to build your next idea or need a developer to work remo
 Copyright (c) 2018 Atul Yadav http://github.com/atulmy
 
 The MIT License (http://www.opensource.org/licenses/mit-license.php)
+
+## Backend Additions
+The backend team was charged with adding a column, style, to the User's table that accepted a string signifying that user's preferred style which was obtained by the user's answers to a survey. To accomplish this, first a migration was added and the attribute was included in the user module directory in the model file.
+
+
