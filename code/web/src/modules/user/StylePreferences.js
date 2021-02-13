@@ -1,12 +1,18 @@
 import React, { Component } from "react";
+import SurveyCards from "./SurveyCards";
+
+// UI imports
 import { H3 } from "../../ui/typography";
 import { Grid, GridCell } from "../../ui/grid";
 import { white, grey, grey2 } from "../../ui/common/colors";
 import Button from "../../ui/button/Button";
 import Icon from "../../ui/icon";
+
 import SurveyCards from "./SurveyCards";
 import userRoutes from "../../setup/routes/user";
 import { Link } from 'react-router-dom'
+
+import { addStyle } from "./api/actions";
 
 
 class StylePreferences extends Component {
@@ -18,18 +24,17 @@ class StylePreferences extends Component {
       flavors: "",
       restaurants: "",
       architecture: "",
-      styleSummary: "Classy, but casual", //Placeholder to see success message
+      styleSummary: "",
     };
   }
-
 
   onSelect = (value, kind) => {
     this.setState({ [kind]: value });
   };
 
-
   onSubmit(event) {
   event.preventDefault()
+    
     const selectionString =
       this.state.vacation +
       ", " +
@@ -38,16 +43,24 @@ class StylePreferences extends Component {
       this.state.restaurants +
       ", " +
       this.state.architecture;
+
       //call hide survey
-      }
+
+    addStyle(selectionString)
+      .then((response) => this.setState({ styleSummary: response.data }))
+      .catch((error) => console.log(error));
+  }
 
  hideSurvey() {
    //hide survey and submit button
  }
 
+
+
   render() {
     return (
       <section>
+
           <Grid style={{ backgroundColor: grey, marginBottom:"1em" }}>
             <GridCell style={{ padding: "2em", textAlign: "center" }}>
               <H3 font="secondary">Style Survey</H3>
@@ -64,6 +77,7 @@ class StylePreferences extends Component {
               textAlign: "center",
             }}
           >
+
           <H3 font="secondary">Favorite vacation destination?</H3>
           <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent", justifyContent:"center", alignContent:"center" }}>
             <SurveyCards
@@ -76,8 +90,10 @@ class StylePreferences extends Component {
               onSelect={this.onSelect}
             />
           </div>
+
           <H3 font="secondary">Spicy, sweet or salty?</H3>
           <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent", justifyContent: "center", alignContent: "center" }}>
+
             <SurveyCards
               images={[
                 { id: "casual", src: "/images/stock/survey/popcorn-B.jpg" },
