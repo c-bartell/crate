@@ -38,7 +38,9 @@ class StylePreferences extends Component {
       this.state.architecture;
 
     addStyle(selectionString)
-      .then((response) => this.setState({ styleSummary: response.data }))
+      .then((response) =>
+        this.setState({ styleSummary: response.data.data.userAddStyle.style })
+      )
       .catch((error) => console.log(error));
   }
 
