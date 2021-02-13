@@ -193,7 +193,13 @@ Copyright (c) 2018 Atul Yadav http://github.com/atulmy
 The MIT License (http://www.opensource.org/licenses/mit-license.php)
 
 ## Backend Additions
-The backend team was charged with adding a column, style, to the User's table that accepted a string signifying that user's preferred style which was obtained by the user's answers to a survey. To accomplish this, first a migration was added and the attribute was included in the user module directory in the model file.
+The backend team was assigned the task of creating a new attribute for a user, style, which is obtained via user survey, that informs the application as to what style of clothing should be included in their crate subscription. To accomplish this, first a migration was added and the attribute was included in the user module directory in the model file.
 
 <img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%201.43.35%20PM.png" width="600" height="250">
 
+The user types.js also needed to be updated:
+<img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%202.21.57%20PM.png" width="600" height="250">
+
+Next a mutation and resolver were implemented to allow the attribute to be updated via GraphQL query. Logic was included in the resolver to take in all answers from the user's survey sent in the request, find the most common, and update the style column for that user with the string. If there is a tie between two styles, a custom string with the two values interpolated is inserted in the column. 
+
+<img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%202.22.26%20PM.png" width="600" height="250">
