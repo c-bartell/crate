@@ -14,7 +14,7 @@ const SurveyCards = (props) => {
           style={{ width: "18em", backgroundColor: white }}
         >
           <p style={{ padding: "0em 0em 0 0em" }}>
-            <img src={image.src} alt={image.id} style={{ width: "100%" }} />
+            <img src={image.src} alt={image.src} style={{ width: "100%" }} />
           </p>
         </Card>
       </button>
