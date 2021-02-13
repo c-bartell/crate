@@ -15,7 +15,7 @@ class StylePreferences extends Component {
       flavors: "",
       restaurants: "",
       architecture: "",
-      styleSummary: "Edgy and classy"
+      styleSummary: "undefined"
     };
   }
 
@@ -40,15 +40,12 @@ class StylePreferences extends Component {
   }
 
   render() {
-    // <div>
-    //   {this.state.styleSummary !== undefined && <div>This works</div>}
-    // </div>
     return (
       <section>
         <Grid style={{ backgroundColor: grey, marginBottom:"1em" }}>
           <GridCell style={{ padding: "2em", textAlign: "center" }}>
             <H3 font="secondary">Style Survey</H3>
-            <p style={{ marginTop: "1.5em", color: grey2 }}>
+            <p style={{ marginTop: "1.5em", color: grey2, padding: "1em" }}>
               Thank you for subscribing! Here is a short survey so we can tailor your crate to you!
               To fill out the survey please select one image from each category and click submit.
             </p>
@@ -62,7 +59,7 @@ class StylePreferences extends Component {
           }}
         >
           <H3 font="secondary">Favorite vacation destination?</H3>
-          <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent" }}>
+          <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent", justifyContent:"center", alignContent:"center" }}>
             <SurveyCards
               images={[
                 { id: "casual", src: "/images/stock/survey/mountains-A.jpg" },
@@ -74,7 +71,7 @@ class StylePreferences extends Component {
             />
           </div>
           <H3 font="secondary">Spicy, sweet or salty?</H3>
-          <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent" }}>
+          <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent", justifyContent: "center", alignContent: "center" }}>
             <SurveyCards
               images={[
                 { id: "casual", src: "/images/stock/survey/popcorn-B.jpg" },
@@ -86,7 +83,7 @@ class StylePreferences extends Component {
             />
           </div>
           <H3 font="secondary">You're hungry, what restaurant do you go to?</H3>
-          <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent"}}>
+          <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent", justifyContent: "center", alignContent: "center" }}>
             <SurveyCards
               images={[
                 { id: "casual", src: "/images/stock/survey/burger-C.jpg" },
@@ -98,7 +95,7 @@ class StylePreferences extends Component {
             />
           </div>
           <H3 font="secondary">Which would you pick as your dream home?</H3>
-          <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent"}}>
+          <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent", justifyContent: "center", alignContent: "center" }}>
             <SurveyCards
               images={[
                 { id: "casual", src: "/images/stock/survey/house-D.jpg" },
@@ -110,7 +107,7 @@ class StylePreferences extends Component {
             />
           </div>
           <div>
-            {this.state.styleSummary !== undefined &&
+            {this.state.styleSummary !== "undefined" &&
              <div>This works</div>}
           </div>
           <Button type="button" theme="primary" onClick={() => this.onSubmit()}>

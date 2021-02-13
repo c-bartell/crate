@@ -7,11 +7,11 @@ const SurveyCards = (props) => {
     return (
       <button
         type="button"
-        style={{border:"transparent"}}
+        style={{ border:"transparent", width:"fit-content", cursor:"pointer", justifyContent:"center", margin:"0.5em" }}
         onClick={() => props.onSelect(image.id, props.category)}
       >
-        <Card style={{ width: "18em", backgroundColor: white }}>
-          <p>
+        <Card style={{ width: "266px", backgroundColor: white, height:"360px" }}>
+          <p style={{ height:"360px" }}>
             <img
               src={image.src}
               alt={image.id}
