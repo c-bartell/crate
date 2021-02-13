@@ -5,6 +5,7 @@ import { white, grey, grey2 } from "../../ui/common/colors";
 import Button from "../../ui/button/Button";
 import Icon from "../../ui/icon";
 import SurveyCards from "./SurveyCards";
+import { primary } from "../../ui/common/fonts";
 
 class StylePreferences extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class StylePreferences extends Component {
       flavors: "",
       restaurants: "",
       architecture: "",
-      styleSummary: "undefined"
+      styleSummary: "Edgy but Classy",
     };
   }
 
@@ -28,11 +29,11 @@ class StylePreferences extends Component {
   
     const selectionString =
       this.state.vacation +
-      " " +
+      ", " +
       this.state.flavors +
-      " " +
+      ", " +
       this.state.restaurants +
-      " " +
+      ", " +
       this.state.architecture;
     //send this string to the backend! 
 
@@ -107,8 +108,17 @@ class StylePreferences extends Component {
             />
           </div>
           <div>
-            {this.state.styleSummary !== "undefined" &&
-             <div>This works</div>}
+            {this.state.styleSummary !== "" &&
+              <Grid style={{ backgroundColor: grey, marginBottom: "1em" }}>
+                <GridCell style={{ padding: "2em", textAlign: "center" }}>
+                  <H3 font="secondary">Your style is {this.state.styleSummary}!</H3>
+                  <p style={{ marginTop: "1.5em", color: grey2, padding: "1em" }}>
+                   Thank you for taking our survey! We'll start building your Crate
+                   based on your selections! 
+                  </p>
+                </GridCell>
+              </Grid>
+              }
           </div>
           <Button type="button" theme="primary" onClick={() => this.onSubmit()}>
             <Icon size={1.2} style={{ color: white }}>

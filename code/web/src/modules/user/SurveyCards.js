@@ -9,6 +9,7 @@ const SurveyCards = (props) => {
         type="button"
         style={{ border:"transparent", width:"fit-content", cursor:"pointer", justifyContent:"center", margin:"0.5em" }}
         onClick={() => props.onSelect(image.id, props.category)}
+        key={`${image.id}${props.category}`}
       >
         <Card style={{ width: "266px", backgroundColor: white, height:"360px" }}>
           <p style={{ height:"360px" }}>
