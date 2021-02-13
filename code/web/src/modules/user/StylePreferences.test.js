@@ -6,7 +6,7 @@ import "@testing-library/jest-dom";
 describe("StylePreferences", () => {
   it("should render header correctly", () => {
     render(<StylePreferences />);
-    expect(screen.getByText("Style Survey")).toBeInTheDocument();
+    expect(screen.getByTestId("title")).toBeInTheDocument();
   });
 
   it("should render questions correctly", () => {
@@ -32,12 +32,11 @@ describe("StylePreferences", () => {
     );
     fireEvent.click(screen.getByAltText("/images/stock/survey/spicy-B.jpg"));
     fireEvent.click(screen.getByAltText("/images/stock/survey/burger-C.jpg"));
-    fireEvent.click(
-      screen.getByAltText("/images/stock/survey/apartment-D.jpg")
-    );
+    fireEvent.click(screen.getByAltText("/images/stock/survey/house-D.jpg"));
 
     fireEvent.click(screen.getByText("Submit Survey"));
 
+    // expect(addStyle).toHaveBeenCalledWith("casual, classy, casual, casual");
     // expect the modal to show up with the style summary
   });
 
