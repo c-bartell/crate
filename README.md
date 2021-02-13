@@ -203,3 +203,6 @@ The user types.js also needed to be updated:
 Next a mutation and resolver were implemented to allow the attribute to be updated via GraphQL query. Logic was included in the resolver to take in all answers from the user's survey sent in the request, find the most common, and update the style column for that user with the string. If there is a tie between two styles, a custom string with the two values interpolated is inserted in the column. 
 
 <img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%202.22.26%20PM.png" width="600" height="250">
+
+Tests were implemented to ensure everything is functioning as expected:
+<img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%202.33.43%20PM.png" width="600" height="250">
