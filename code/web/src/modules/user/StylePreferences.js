@@ -28,6 +28,15 @@ class StylePreferences extends Component {
   };
 
   onSubmit() {
+    if (
+      this.state.vacation === "" ||
+      this.state.flavors === "" ||
+      this.state.restaurants === "" ||
+      this.state.architecture === ""
+    ) {
+      alert("Must select an image for each category.");
+      return;
+    }
     const selectionString =
       this.state.vacation +
       ", " +
