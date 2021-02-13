@@ -208,3 +208,15 @@ Next a mutation and resolver were implemented to allow the attribute to be updat
 Tests were implemented to ensure everything is functioning as expected:
 
 <img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%202.33.43%20PM.png" width="600" height="250">
+
+To test the functionality of these changes in Postman, first obtain an auth token for a user in the db by making a query via GraphiQL:
+
+<img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%202.55.49%20PM.png" width="600" height="250">
+
+Then in Postman start a new POST request, under Auth, select Bearer Token and paste the token obtained from the GraphiQL request:
+
+<img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%202.56.22%20PM.png" width="600" height="250">
+
+Finally, under Body, select GraphQL and type in the query as shown below:
+
+<img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%202.56.39%20PM.png" width="600" height="250">
