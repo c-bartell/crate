@@ -57,14 +57,8 @@ class StylePreferences extends Component {
         this.setState({ styleSummary: response.data.data.userAddStyle.style });
       })
       .then((response) => {
-        const userInfo = {
-          name: this.props.user.details.name,
-          email: this.props.user.details.email,
-          role: null,
-          style: this.state.styleSummary,
-        };
-        console.log(userInfo);
-        this.props.login(userInfo, true);
+        this.props.user.details.style = this.state.styleSummary;
+        login(this.props.user.details);
       })
       .catch((error) => console.log(error));
   }
