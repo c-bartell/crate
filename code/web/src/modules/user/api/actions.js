@@ -11,7 +11,6 @@ export const LOGIN_REQUEST = "AUTH/LOGIN_REQUEST";
 export const LOGIN_RESPONSE = "AUTH/LOGIN_RESPONSE";
 export const SET_USER = "AUTH/SET_USER";
 export const LOGOUT = "AUTH/LOGOUT";
-export const GET_USER_STYLE = "AUTH/GET_USER_STYLE";
 
 // Actions
 
@@ -40,7 +39,7 @@ export function login(userCredentials, isLoading = true) {
         query({
           operation: "userLogin",
           variables: userCredentials,
-          fields: ["user {name, email, role}", "token"],
+          fields: ["user {name, email, role, style}", "token"],
         })
       )
       .then((response) => {
@@ -129,7 +128,7 @@ export function getGenders() {
   };
 }
 
-// // Get Style
+// Get Style
 export const addStyle = (surveyResults) => {
   return axios.post(
     routeApi,

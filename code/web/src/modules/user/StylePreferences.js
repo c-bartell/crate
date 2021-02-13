@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import SurveyCards from "./SurveyCards";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 // UI imports
 import { H3 } from "../../ui/typography";
@@ -8,12 +10,12 @@ import { white, grey, grey2 } from "../../ui/common/colors";
 import Button from "../../ui/button/Button";
 import Icon from "../../ui/icon";
 
-import { addStyle } from "./api/actions";
+// POST call import
+import { addStyle, login } from "./api/actions";
 
 class StylePreferences extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       vacation: "",
       flavors: "",
@@ -27,7 +29,7 @@ class StylePreferences extends Component {
     this.setState({ [kind]: value });
   };
 
-  onSubmit() {
+  checkSurveyFilledOut() {
     if (
       this.state.vacation === "" ||
       this.state.flavors === "" ||
@@ -35,8 +37,12 @@ class StylePreferences extends Component {
       this.state.architecture === ""
     ) {
       alert("Must select an image for each category.");
-      return;
     }
+  }
+
+  onSubmit() {
+    this.checkSurveyFilledOut();
+
     const selectionString =
       this.state.vacation +
       ", " +
@@ -47,9 +53,10 @@ class StylePreferences extends Component {
       this.state.architecture;
 
     addStyle(selectionString)
-      .then((response) =>
-        this.setState({ styleSummary: response.data.data.userAddStyle.style })
-      )
+      .then((response) => {
+        this.setState({ styleSummary: response.data.data.userAddStyle.style });
+        login(this.props.user.details);
+      })
       .catch((error) => console.log(error));
   }
 
@@ -138,4 +145,10 @@ class StylePreferences extends Component {
   }
 }
 
-export default StylePreferences;
+const mapStateToProps = function (state) {
+  return {
+    user: state.user,
+  };
+};
+
+export default connect(mapStateToProps)(withRouter(StylePreferences));
