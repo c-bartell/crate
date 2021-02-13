@@ -5,7 +5,9 @@ import { white, grey, grey2 } from "../../ui/common/colors";
 import Button from "../../ui/button/Button";
 import Icon from "../../ui/icon";
 import SurveyCards from "./SurveyCards";
-import { primary } from "../../ui/common/fonts";
+import userRoutes from "../../setup/routes/user";
+import { Link } from 'react-router-dom'
+
 
 class StylePreferences extends Component {
   constructor(props) {
@@ -16,7 +18,7 @@ class StylePreferences extends Component {
       flavors: "",
       restaurants: "",
       architecture: "",
-      styleSummary: "Edgy but Classy",
+      styleSummary: "Classy, but casual", //Placeholder to see success message
     };
   }
 
@@ -25,8 +27,9 @@ class StylePreferences extends Component {
     this.setState({ [kind]: value });
   };
 
-  onSubmit() {
-  
+
+  onSubmit(event) {
+  event.preventDefault()
     const selectionString =
       this.state.vacation +
       ", " +
@@ -35,30 +38,32 @@ class StylePreferences extends Component {
       this.state.restaurants +
       ", " +
       this.state.architecture;
-    //send this string to the backend! 
+      //call hide survey
+      }
 
-    // bring up the modal with the style summary! 
-  }
+ hideSurvey() {
+   //hide survey and submit button
+ }
 
   render() {
     return (
       <section>
-        <Grid style={{ backgroundColor: grey, marginBottom:"1em" }}>
-          <GridCell style={{ padding: "2em", textAlign: "center" }}>
-            <H3 font="secondary">Style Survey</H3>
-            <p style={{ marginTop: "1.5em", color: grey2, padding: "1em" }}>
-              Thank you for subscribing! Here is a short survey so we can tailor your crate to you!
-              To fill out the survey please select one image from each category and click submit.
-            </p>
-          </GridCell>
-        </Grid>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            textAlign: "center",
-          }}
-        >
+          <Grid style={{ backgroundColor: grey, marginBottom:"1em" }}>
+            <GridCell style={{ padding: "2em", textAlign: "center" }}>
+              <H3 font="secondary">Style Survey</H3>
+              <p style={{ marginTop: "1.5em", color: grey2, padding: "1em" }}>
+                Thank you for subscribing! Here is a short survey so we can tailor your crate to you!
+                To fill out the survey please select one image from each category and click submit.
+              </p>
+            </GridCell>
+          </Grid>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              textAlign: "center",
+            }}
+          >
           <H3 font="secondary">Favorite vacation destination?</H3>
           <div style={{ margin: "2em", display: "flex", flexDirection: "row", border: "transparent", justifyContent:"center", alignContent:"center" }}>
             <SurveyCards
@@ -107,31 +112,40 @@ class StylePreferences extends Component {
               onSelect={this.onSelect}
             />
           </div>
-          <div>
-            {this.state.styleSummary !== "" &&
-              <Grid style={{ backgroundColor: grey, marginBottom: "1em" }}>
-                <GridCell style={{ padding: "2em", textAlign: "center" }}>
-                  <H3 font="secondary">Your style is {this.state.styleSummary}!</H3>
-                  <p style={{ marginTop: "1.5em", color: grey2, padding: "1em" }}>
-                   Thank you for taking our survey! We'll start building your Crate
-                   based on your selections! 
-                  </p>
-                </GridCell>
-              </Grid>
-              }
-          </div>
+        <div>
+          {this.state.styleSummary !== "" &&
+            <Grid style={{ backgroundColor: grey, marginBottom: "1em" }}>
+              <GridCell style={{ padding: "2em", textAlign: "center" }}>
+                <H3 font="secondary">Your style is { this.state.styleSummary }!</H3>
+                <p style={{ marginTop: "1.5em", color: grey2, padding: "1em" }}>
+                  Thank you for taking our survey! We'll start building your Crate
+                  based on your selections! 
+                </p>
+                <Link to={userRoutes.subscriptions.path}>
+                  <Button type="button" theme="primary" onClick={() => this.close()}>//this onClick isn't a function breaks without an onClick.
+                    <Icon size={1.2} style={{ color: white }}>
+                      add
+                    </Icon>{" "}
+                    See Subscriptions
+                  </Button>
+                </Link>
+              </GridCell>
+            </Grid>
+          }
+        </div>
+        <div>
           <Button type="button" theme="primary" onClick={() => this.onSubmit()}>
             <Icon size={1.2} style={{ color: white }}>
               add
-            </Icon>{" "}
-            Submit Survey
+              </Icon>{" "}
+              Submit Survey
           </Button>
         </div>
-      </section>
+      </div>
+    </section>
     );
   }
 }
 
-
-export default StylePreferences
+export default StylePreferences;
 
