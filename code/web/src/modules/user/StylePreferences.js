@@ -181,6 +181,7 @@ class StylePreferences extends Component {
                 type="button"
                 theme="primary"
                 onClick={() => this.onSubmit()}
+                data-testId='submit-survey'
               >
                 <Icon size={1.2} style={{ color: white }}>
                   add
@@ -192,10 +193,10 @@ class StylePreferences extends Component {
         )}
 
         {this.state.styleSummary !== "" && (
-          <div>
+          <div className="results">
             <Grid style={{ backgroundColor: grey, marginBottom: "1em" }}>
               <GridCell style={{ padding: "2em", textAlign: "center" }}>
-                <H3 font="secondary">
+                <H3 className="style-summary" font="secondary">
                   Your style is {this.state.styleSummary}!
                 </H3>
                 <p style={{ marginTop: "1.5em", color: grey2, padding: "1em" }}>

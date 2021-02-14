@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cypress": "cypress open",
     "test": "jest",
     "setup": "npm install",
     "start": "npm run build:client && npm run start:server",
@@ -31,6 +32,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "babel-loader": "8.1.0",
+    "cypress": "^6.4.0",
     "dotenv-webpack": "^1.8.0",
     "jest": "^26.6.3",
     "nodemon": "2.0.4",
