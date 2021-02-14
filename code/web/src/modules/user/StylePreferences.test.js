@@ -2,15 +2,24 @@ import React from "react";
 import StylePreferences from "./StylePreferences";
 import { screen, render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { Provider } from "react-redux";
 
 describe("StylePreferences", () => {
   it("should render header correctly", () => {
-    render(<StylePreferences />);
+    render(
+      <Provider>
+        <StylePreferences />
+      </Provider>
+    );
     expect(screen.getByTestId("title")).toBeInTheDocument();
   });
 
   it("should render questions correctly", () => {
-    render(<StylePreferences />);
+    render(
+      <Provider>
+        <StylePreferences />
+      </Provider>
+    );
     expect(
       screen.getByText("Favorite vacation destination?")
     ).toBeInTheDocument();
@@ -26,7 +35,11 @@ describe("StylePreferences", () => {
   });
 
   it("should be able to click submit if ALL images have been selected", () => {
-    render(<StylePreferences />);
+    render(
+      <Provider>
+        <StylePreferences />
+      </Provider>
+    );
     fireEvent.click(
       screen.getByAltText("/images/stock/survey/mountains-A.jpg")
     );
@@ -42,7 +55,11 @@ describe("StylePreferences", () => {
 
   it("should not be able to click submit if NO images have been selected", () => {
     window.alert = jest.fn();
-    render(<StylePreferences />);
+    render(
+      <Provider>
+        <StylePreferences />
+      </Provider>
+    );
 
     fireEvent.click(screen.getByText("Submit Survey"));
 
@@ -51,7 +68,11 @@ describe("StylePreferences", () => {
 
   it("should not be able to click submit if only 1 image has been selected", () => {
     window.alert = jest.fn();
-    render(<StylePreferences />);
+    render(
+      <Provider>
+        <StylePreferences />
+      </Provider>
+    );
     fireEvent.click(screen.getByAltText("/images/stock/survey/spicy-B.jpg"));
 
     fireEvent.click(screen.getByText("Submit Survey"));
@@ -61,7 +82,11 @@ describe("StylePreferences", () => {
 
   it("should not be able to click submit if only 2 images have been selected", () => {
     window.alert = jest.fn();
-    render(<StylePreferences />);
+    render(
+      <Provider>
+        <StylePreferences />
+      </Provider>
+    );
     fireEvent.click(
       screen.getByAltText("/images/stock/survey/mountains-A.jpg")
     );
@@ -74,7 +99,11 @@ describe("StylePreferences", () => {
 
   it("should not be able to click submit if only 3 images have been selected", () => {
     window.alert = jest.fn();
-    render(<StylePreferences />);
+    render(
+      <Provider>
+        <StylePreferences />
+      </Provider>
+    );
     fireEvent.click(
       screen.getByAltText("/images/stock/survey/mountains-A.jpg")
     );
