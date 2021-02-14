@@ -1,8 +1,8 @@
 import React from "react";
-import StylePreferences from "./StylePreferences";
+import StylePreferences from "../StylePreferences";
 import { screen, render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { addStyle } from "./api/actions";
+import { addStyle } from "../api/actions";
 jest.mock("./api/actions");
 
 describe("POST", () => {
