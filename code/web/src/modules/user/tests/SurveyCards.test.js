@@ -1,5 +1,5 @@
 import React from "react";
-import SurveyCards from "./SurveyCards";
+import SurveyCards from "../SurveyCards";
 import { screen, render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
