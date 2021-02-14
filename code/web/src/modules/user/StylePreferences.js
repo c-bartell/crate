@@ -53,7 +53,11 @@ class StylePreferences extends Component {
       ", " +
       this.state.architecture;
 
-    addStyle(selectionString)
+    this.handlePOST(selectionString);
+  }
+
+  handlePOST = (surveyResults) => {
+    addStyle(surveyResults)
       .then((response) => {
         this.setState({ styleSummary: response.data.data.userAddStyle.style });
       })
@@ -62,8 +66,7 @@ class StylePreferences extends Component {
         login(this.props.user.details);
       })
       .catch((error) => console.log(error));
-  }
-
+  };
 
   render() {
     return (
