@@ -15,7 +15,7 @@ const SurveyCards = (props) => {
           <p style={{ height:"360px" }}>
             <img
               src={image.src}
-              alt={image.id}
+              alt={image.src}
               style={{ width: "100%", height: "360px" }}
             />
           </p>
