@@ -220,3 +220,25 @@ Then in Postman start a new POST request, under Auth, select Bearer Token and pa
 Finally, under Body, select GraphQL and type in the query as shown below:
 
 <img src="https://raw.githubusercontent.com/jakeheft/crate/user_style/code/api/public/images/uploads/Screen%20Shot%202021-02-13%20at%202.56.39%20PM.png" width="600" height="250">
+
+## Frontend Additions
+The frontend team was tasked with creating a new view for Crate users who were navigating the site specifically to subscribe. 
+When a user selects any crate subscription the new lifestyle survey loads and captures thier selections. Currently we have coded only three styles, but more could be added in future iterations for greater variety. 
+
+Initally we started with wireframing out the new component as well as some directions we could go once the survey was made and each style preference was stored in the database.
+
+<img src="https://raw.githubusercontent.com/jakeheft/crate/main/code/web/public/images/Crate-Wireframe.png">
+
+The view of the style survey with each survey card being hardcoded with one images and one id that held the style value. Once the user has logged in we check if they have a value in the database for "style", if that returns as null the survey loads once they select a crate to subscribe to. Initally we began with a literal clothing survey divided by gender and here pivoted to the lifestyle survey format.
+
+<img src="https://raw.githubusercontent.com/jakeheft/crate/main/code/web/public/images/Main%20survey-view.png">
+
+Once the user has made all four selections and clicked submit they are informed of their style and given a button to navigate to thier subscriptions page. This action sends the survey style results to the backend where it is associated with that user. Currently once a user has taken the survey and still has active subscriptions, they cannot take the survey again. In future we'd add a feature so that they can redo the survey if they don't agree with the results or want to change it up.
+
+Here is the submitted survey message with a single style in the majority:
+
+<img src="https://github.com/jakeheft/crate/blob/main/code/web/public/images/Highlander-style-summary.png">
+
+Here is the submitted survey message with two tied styles:
+
+<img src="https://github.com/jakeheft/crate/blob/main/code/web/public/images/Tied-style-summary.png">
